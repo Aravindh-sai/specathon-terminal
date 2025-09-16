@@ -4,6 +4,7 @@ import HackerBackground from "../../components/HackerBackground";
 export const metadata = {
   title: "Specathon Terminal",
   description: "Invitation to Specathon",
+  favicon: "/public/logo.png",
 };
 
 import { ReactNode } from "react";

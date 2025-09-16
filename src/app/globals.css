@@ -52,7 +52,7 @@ body {
 .title {
   font-size: 2rem;
   font-weight: bold;
-  color: #fff;
+  color: #e0e0e0aa;
 }
 
 .subtitle {
@@ -112,6 +112,12 @@ body {
 }
 
 @media (min-width: 1024px) {
+  .welcome-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
   .specathon-title {
     font-size: 9rem;
   }
@@ -151,17 +157,18 @@ body {
   transform: none;
   transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
   z-index: 10;
-  margin-bottom: 20px;
+  margin-bottom: 1px;
 }
 
 /* Scrolled state: stick to top center and shrink */
 .title-wrapper.scrolled {
   position: fixed;
   top: 1rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
   left: 50%;
   transform: translateX(-50%) scale(0.6);
 }
+
 
 
 .details-box {
@@ -188,13 +195,13 @@ body {
 .detail-number {
   font-size: 3rem;
   font-weight: bold;
-  color: #00ff00;
+  color: #c0c0c0;
 }
 
 .detail-text {
   margin-top: 8px;
   font-size: 1rem;
-  color: #ccc;
+  color: #cccccc7e;
   text-align: center;
 }
 
@@ -210,6 +217,459 @@ body {
 
   .details-box {
     padding: 20px;
+    max-width: 60vw;
+    gap: 8vh;
   }
 }
 
+/* Section wrapper */
+.section {
+  margin: 60px auto;
+  max-width: 900px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Headings */
+.section-heading {
+  font-size: 2rem;
+  color: #c4c4c4;
+  margin-bottom: 30px;
+}
+
+/* Card container */
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+}
+
+/* Divider */
+.vertical-divider {
+  width: 2px;
+  background: #ffffff;
+  height: 100%;
+  align-self: stretch;
+}
+
+/* Judge Cards */
+.judge-card,
+.evaluator-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+/* Judge Photos */
+.judge-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* Names + Designations */
+.judge-name,
+.evaluator-name {
+  font-size: 1.2rem;
+  color: #cdcdcd;
+  font-weight: bold;
+}
+
+.judge-designation,
+.evaluator-designation {
+  font-size: 1rem;
+  color: #cccccc7e;
+  margin-top: 5px;
+}
+
+/* Evaluators Grid Layout */
+.evaluator-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 8vh;
+  backdrop-filter: blur(5px);
+}
+
+@media (min-width: 768px) {
+  .evaluator-grid {
+    grid-template-columns: 1fr 1fr; /* 2 per row on desktop */
+  }
+}
+/* Card container (Judges) */
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+  flex-wrap: wrap; /* allow wrapping on small screens */
+}
+
+/* Divider */
+.vertical-divider {
+  width: 2px;
+  background: #ffffff;
+  height: 100%;
+  align-self: stretch;
+}
+
+/* Mobile: stack judges and hide divider */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    gap: 9vh;
+    padding-top: 5vh;
+    
+  }
+
+  .vertical-divider {
+    display: none;
+  }
+}
+
+/* Timeline wrapper */
+.timeline {
+  position: relative;
+  margin: 60px auto;
+  max-width: 900px;
+  padding: 20px 0;
+  
+}
+.timeline .section-heading {
+  text-align: center;
+}
+/* Central vertical line */
+.timeline::after {
+  content: "";
+  position: absolute;
+  top: 30vh;
+  bottom: 5vh;
+  left: 50%;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(-50%);
+}
+
+/* Day marker */
+.day-marker {
+  display: inline-block;
+  margin: 40px auto;
+  padding: 8px 20px;
+  background: rgba(0, 255, 0, 0.173);
+  border: 1px solid #00ff00;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #00ff00;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Timeline items */
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+}
+
+.timeline-item.left {
+  right: 9%;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
+}
+
+/* Event card content */
+.timeline-item .content {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  position: relative;
+}
+
+.timeline-item .time {
+  color: #00ff00;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.timeline-item .title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffffcf;
+}
+
+.timeline-item .desc {
+  color: #bbb;
+  margin-top: 5px;
+  font-size: 0.9rem;
+}
+
+/* Circle indicator */
+.timeline-item .circle {
+  position: absolute;
+  top: 20px;
+  right: -10px; /* for left side */
+  width: 14px;
+  height: 14px;
+  background: #00ff00;
+  border-radius: 50%;
+  border: 2px solid #000;
+}
+
+.timeline-item.right .circle {
+  left: -10px;
+  right: auto;
+}
+
+/* Responsive: mobile view */
+@media (max-width: 768px) {
+  .timeline::after {
+    left: 20px; /* push line to left */
+  }
+  .timeline{
+    text-align: center;
+  }
+  .timeline-item {
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 0;
+    text-align: left !important;
+  }
+
+  /* Make both left and right items consistent */
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 5vw;
+  }
+
+  /* Circle position for both sides */
+  .timeline-item .circle {
+    left: -2vw;
+    right: auto;
+  }
+
+  /* Content box same for both */
+  .timeline-item .content {
+    width: 70vw;
+    margin: 5vw;
+    font-size: 0.9rem;
+  }
+}
+
+/* Venue Cards */
+.venue-card {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.venue-name {
+  font-size: 1.8rem;  /* bigger letters */
+  font-weight: bold;
+  color: #ffffff;
+}
+/* Footer wrapper */
+.footer {
+  position: relative;
+  background-color: #000;
+  color: #fff;
+  font-family: "Consolas", "Courier New", monospace;
+  overflow: hidden;
+  padding: 2.5rem 1.5rem;
+}
+
+/* Animated gradient shimmer */
+.footer .gradient-shimmer {
+  position: absolute;
+  inset: 0;
+  background: rgba(82, 82, 82, 0.177);
+  z-index: 0;
+}
+
+/* Neon top border */
+.footer .top-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #7d7d7d;
+  box-shadow: 0 0 10px #565656;
+  z-index: 1;
+}
+
+/* Footer content wrapper */
+.footer .content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Top Row */
+.footer .top-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.footer .top-row h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #7d7d7d; /* Cyan */
+}
+
+.footer .top-row p {
+  color: #999;
+  margin: 0;
+}
+
+.footer .top-row a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer .top-row a:hover {
+  color: #4b4b4b;
+}
+
+/* Middle Row */
+.footer .middle-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer .middle-row .social-icons {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 2rem;
+}
+
+.footer .middle-row .social-icons a {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.footer .middle-row .social-icons a:hover {
+  transform: scale(1.1);
+}
+
+/* Contact info */
+.footer .middle-row .contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #999;
+}
+
+.footer .middle-row .contact-info a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #999;
+  text-decoration: none;
+}
+
+.footer .middle-row .contact-info a:hover {
+  color: #777777;
+}
+
+/* Divider */
+.footer .divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Bottom Row */
+.footer .bottom-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #777;
+}
+
+.footer .bottom-row button {
+  padding: 0.25rem 0.75rem;
+  border: 1px solid #4d4d4e;
+  border-radius: 5px;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.footer .bottom-row button:hover {
+  background-color: rgba(61, 61, 61, 0.1);
+  box-shadow: 0 0 10px #010708;
+}
+
+/* Gradient animation */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.footer .animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientMove 15s ease infinite;
+}
+
+/* Default icon color */
+.footer .social-icons a {
+  color: #00ff00a2; /* white by default */
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.footer .social-icons a:hover {
+  color: #00ff0041; /* pink on hover */
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .footer .top-row, 
+  .footer .middle-row, 
+  .footer .bottom-row {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+  .footer{
+    width: 100%;
+  }
+}

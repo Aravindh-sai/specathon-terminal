@@ -8,7 +8,7 @@ export default function Details({ abstracts = 0, teams = 0, participants = 0 }) 
 
   useEffect(() => {
     // Simple counter animation
-    const duration = 1500; // 1.5 seconds
+    const duration = 8000; // 1.5 seconds
     const stepTime = 30;
 
     const animateNumber = (target, setter) => {

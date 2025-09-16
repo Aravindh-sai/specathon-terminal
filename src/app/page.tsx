@@ -4,7 +4,11 @@ import LandingPage from "../../components/LandingPage";
 import HackerBackground from "../../components/HackerBackground";
 import CenteredWelcome from "../../components/CenteredWelcome";
 import Details from "../../components/Details";
-
+import Judges from "../../components/Judges";
+import InternalEvaluators from "../../components/InternalEvaluators";
+import EventTimeline from "../../components/EventTimeline";
+import Venues from "../../components/Venues";
+import Footer from "../../components/Footer";
 export default function Home() {
   const [authorized, setAuthorized] = useState(false);
 
@@ -34,10 +38,18 @@ export default function Home() {
 
           {/* Details Section (scrollable) */}
           <div style={{ position: "relative", zIndex: 10, padding: "20px 20px" }}>
-            <Details abstracts={120} teams={25} participants={150} />
+            <Details abstracts={300} teams={60} participants={200} />
+            <Judges />
+            <InternalEvaluators />
+            <EventTimeline />
+            <Venues />
           </div>
+
+        <Footer />
         </>
       )}
     </main>
+
+    
   );
 }
