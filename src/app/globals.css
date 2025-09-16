@@ -122,3 +122,24 @@ body {
     font-size: 10rem;
   }
 }
+
+.terminal-container.left,
+.terminal-container.right {
+  font-size: 0.7rem; /* default desktop */
+  line-height: 1rem;
+}
+
+/* Responsive overrides */
+@media (max-width: 640px) {
+  .terminal-container.left,
+  .terminal-container.right {
+    font-size: 0.5rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .terminal-container.left,
+  .terminal-container.right {
+    font-size: 0.9rem;
+  }
+}
