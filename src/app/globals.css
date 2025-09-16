@@ -1,26 +1,77 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: #000; /* Black background */
+  color: #ccc; /* Soft grey text */
+  font-family: "Consolas", "Courier New", monospace; /* Real terminal fonts */
+}
+
+/* Background container */
+.background {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+/* Left lines (top-left) */
+.terminal-container.left {
+  align-self: flex-start;
+  text-align: left;
+  opacity: 0.1; /* Slightly brighter to feel “busier” */
+  font-size: 0.7rem; /* Smaller font for compactness */
+  line-height: 1rem; /* Reduced line spacing */
+  letter-spacing: -0.5px; /* Tighter look */
+}
+
+/* Right lines (bottom-right) */
+.terminal-container.right {
+  align-self: flex-end;
+  text-align: right;
+  opacity: 0.1;
+  font-size: 0.7rem;
+  line-height: 1rem;
+  letter-spacing: -0.5px;
+}
+
+/* Foreground content */
+.main-content {
+  position: relative;
+  z-index: 1; /* above background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.subtitle {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #aaa;
+}
+
+/* global.css */
+.text-6xl {
+  font-size: 6rem;  
+  line-height: 1;
+}
+
+.text-11xl {
+  font-size: 12rem;
+  line-height: 1;
+}
+
+.text-12xl {
+  font-size: 14rem;
+  line-height: 1;
 }
