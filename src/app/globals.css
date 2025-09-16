@@ -1,8 +1,9 @@
+/* src/app/globals.css */
 body {
   margin: 0;
-  background-color: #000; /* Black background */
-  color: #ccc; /* Soft grey text */
-  font-family: "Consolas", "Courier New", monospace; /* Real terminal fonts */
+  background-color: #000;
+  color: #ccc;
+  font-family: "Consolas", "Courier New", monospace;
 }
 
 /* Background container */
@@ -21,10 +22,10 @@ body {
 .terminal-container.left {
   align-self: flex-start;
   text-align: left;
-  opacity: 0.1; /* Slightly brighter to feel “busier” */
-  font-size: 0.7rem; /* Smaller font for compactness */
-  line-height: 1rem; /* Reduced line spacing */
-  letter-spacing: -0.5px; /* Tighter look */
+  opacity: 0.1;
+  font-size: 0.7rem;
+  line-height: 1rem;
+  letter-spacing: -0.5px;
 }
 
 /* Right lines (bottom-right) */
@@ -40,7 +41,7 @@ body {
 /* Foreground content */
 .main-content {
   position: relative;
-  z-index: 1; /* above background */
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -60,18 +61,64 @@ body {
   color: #aaa;
 }
 
-/* global.css */
-.text-6xl {
-  font-size: 6rem;  
+/* Custom font sizes for welcome text */
+.welcome-text {
+  font-size: 0.9rem;
   line-height: 1;
+  text-align: center;
 }
 
-.text-11xl {
-  font-size: 12rem;
-  line-height: 1;
+@media (min-width: 640px) {
+  .welcome-text {
+    font-size: 1rem;
+  }
 }
 
-.text-12xl {
-  font-size: 14rem;
+@media (min-width: 768px) {
+  .welcome-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .welcome-text {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .welcome-text {
+    font-size: 2rem;
+  }
+}
+
+/* Custom font sizes for title */
+.specathon-title {
+  font-size: 2.5rem;
   line-height: 1;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .specathon-title {
+    font-size: 7rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .specathon-title {
+    font-size: 9rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .specathon-title {
+    font-size: 9rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .specathon-title {
+    font-size: 10rem;
+  }
 }
